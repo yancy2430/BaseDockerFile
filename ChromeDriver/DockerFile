@@ -1,0 +1,7 @@
+FROM centos:7
+RUN yum  update -y
+RUN yum install unzip java -y
+RUN yum install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -y
+RUN wget -P /home/ https://npm.taobao.org/mirrors/chromedriver/77.0.3865.40/chromedriver_linux64.zip
+RUN cd /home/ && unzip /home/chromedriver_linux64.zip
+RUN ln -s /home/chromedriver /usr/bin/chromedriver
